@@ -1,0 +1,67 @@
+ @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+ body {
+  font-family: "Lobster", cursive;
+  background: #333;
+  color: white;
+}
+.main_div {
+    width: 100%;
+    max-width: 1300px;
+    margin: 25px auto;
+}
+.main_div h1 {
+  text-align: center;
+  font-weight: 100;
+}
+.main_div .panels{
+    list-style-type: none;
+    margin-top: 30px;
+}
+ .main_div .panels li{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    width: 25%;
+    font-size: 27px;
+    border-color:  #333;
+    border-style: solid;
+}
+.main_div .panels li div{
+    width: 100%;
+    padding: 50% 0;
+
+}
+/* Animation Part */
+ .main_div .panels li div.back{
+  transform: rotateY(90deg);
+}
+  .main_div .panels li div.front{
+  position: absolute;
+}
+.main_div .panels li:hover div.front{
+  animation: roll 0.2s  linear  forwards;
+}
+.main_div .panels li:hover div.back{
+  animation: roll 0.3s 0.4s linear reverse forwards;
+}
+@keyframes roll {
+  from{
+      transform: rotateY(0deg);}
+  to{
+      transform: rotateY(90deg);}
+}
+
+
+
+@media(max-width:360px){
+  .main_div .panels li{
+    font-size: 15px;
+  }
+}   
